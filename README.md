@@ -1,2 +1,2 @@
-# googliex
-website for digital marketing services
+# googliex tech solutions 
+digital marketing services,seo,website development,email marketing
