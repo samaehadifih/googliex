@@ -1,0 +1,29 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const botButton = document.createElement('button');
+    botButton.textContent = 'Chat Support';
+    botButton.style.position = 'fixed';
+    botButton.style.bottom = '20px';
+    botButton.style.right = '20px';
+    botButton.style.padding = '10px';
+    botButton.style.backgroundColor = '#007BFF';
+    botButton.style.color = 'white';
+    botButton.style.border = 'none';
+    botButton.style.cursor = 'pointer';
+    document.body.appendChild(botButton);
+
+    botButton.addEventListener('click', () => {
+        const userInput = prompt('Please enter your requirement and contact details:');
+        if (userInput) {
+            alert('Thank you! Your details have been sent.');
+            window.location.href = `mailto:email-samaehdifh@gmail.com?subject=Client Inquiry&body=${encodeURIComponent(userInput)}`;
+        }
+    });
+});
+
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+setInterval(() => {
+    slides[currentSlide].style.transform = `translateX(-${currentSlide * 100}%)`;
+    currentSlide = (currentSlide + 1) % slides.length;
+}, 3000);

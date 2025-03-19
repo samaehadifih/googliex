@@ -1,0 +1,61 @@
+import os
+import hashlib
+
+def hash_file(filepath):
+    """Compute MD5 hash for the file at filepath."""
+    with open(filepath, 'rb') as f:
+        file_hash = hashlib.md5()
+        while chunk := f.read(8192):
+            file_hash.update(chunk)
+    return file_hash.hexdigest()
+
+def find_duplicates(directory):
+    """Return a dictionary mapping file hash to list of files sharing that hash."""
+    hashes = {}
+    duplicates = {}
+    # Look for common code files; adjust extensions as needed.
+    valid_extensions = (".html", ".htm", ".php", ".css", ".js")
+    
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            if file.endswith(valid_extensions):
+                path = os.path.join(root, file)
+                file_hash = hash_file(path)
+                if file_hash in hashes:
+                    hashes[file_hash].append(path)
+                else:
+                    hashes[file_hash] = [path]
+                    
+    # Filter the dictionary for duplicate entries
+    for file_hash, paths in hashes.items():
+        if len(paths) > 1:
+            duplicates[file_hash] = paths
+            
+    return duplicates
+
+def remove_duplicates(directory, dry_run=True):
+    """Remove duplicate files. If dry_run is True, then only print duplicates."""
+    duplicates = find_duplicates(directory)
+    if duplicates:
+        print("Duplicate files found:")
+        for file_hash, paths in duplicates.items():
+            print(f"\nFiles with hash {file_hash}:")
+            for path in paths:
+                print(path)
+            if not dry_run:
+                # Keep the first file and remove the rest
+                for dup_path in paths[1:]:
+                    print(f"Removing duplicate file: {dup_path}")
+                    os.remove(dup_path)
+    else:
+        print("No duplicate files found.")
+
+if __name__ == "__main__":
+    import sys
+
+    # Default to current directory if no parameter given
+    directory = sys.argv[1] if len(sys.argv) > 1 else '.'
+    
+    # Set dry_run to True to only list duplicates. Set to False to actually remove them.
+    dry_run = True  
+    remove_duplicates(directory, dry_run=dry_run)

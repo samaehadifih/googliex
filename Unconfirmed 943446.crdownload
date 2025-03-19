@@ -1,0 +1,129 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const botButton = document.createElement('button');
+    botButton.textContent = 'Chat Support';
+    botButton.style.position = 'fixed';
+    botButton.style.bottom = '20px';
+    botButton.style.right = '20px';
+    botButton.style.padding = '10px';
+    botButton.style.backgroundColor = '#007BFF';
+    botButton.style.color = 'white';
+    botButton.style.border = 'none';
+    botButton.style.cursor = 'pointer';
+    document.body.appendChild(botButton);
+
+    botButton.addEventListener('click', () => {
+        const userInput = prompt('Please enter your requirement and contact details:');
+        if (userInput) {
+            alert('Thank you! Your details have been sent.');
+            window.location.href = `mailto:email-samaehdifh@gmail.com?subject=Client Inquiry&body=${encodeURIComponent(userInput)}`;
+        }
+    });
+});
+
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+setInterval(() => {
+    slides[currentSlide].style.transform = `translateX(-${currentSlide * 100}%)`;
+    currentSlide = (currentSlide + 1) % slides.length;
+}, 3000);
+
+self.addEventListener('install', event => {
+    event.waitUntil(
+        caches.open('site-cache').then(cache => cache.addAll(['/index.html', '/styles.css', '/script.js']))
+    );
+});
+
+gsap.from(".service-card", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    stagger: 0.2
+});
+
+const user = localStorage.getItem("username") || "Guest";
+document.getElementById("greeting").innerText = `Welcome back, ${user}!`;
+
+const socket = io();
+socket.on("new-message", data => {
+    const messages = document.getElementById("messages");
+    messages.innerHTML += `<p>${data.message}</p>`;
+});
+const user = localStorage.getItem("username") || "Guest";
+document.getElementById("greeting").innerText = `Welcome back, ${user}!`;
+const socket = io();
+socket.on("new-message", data => {
+    const messages = document.getElementById("messages");
+    messages.innerHTML += `<p>${data.message}</p>`;
+});
+
+gsap.to(".card", { 
+    duration: 1, 
+    y: 20, 
+    repeat: -1, 
+    yoyo: true 
+});
+// popup.js - Example for a Contact Form Popup
+
+document.addEventListener('DOMContentLoaded', () => {
+  const popupButton = document.createElement('button');
+  popupButton.textContent = 'Need Help? Chat Now';
+  popupButton.style.position = 'fixed';
+  popupButton.style.bottom = '20px';
+  popupButton.style.right = '20px';
+  popupButton.style.padding = '10px 15px';
+  popupButton.style.backgroundColor = 'var(--blue)';
+  popupButton.style.color = '#fff';
+  popupButton.style.border = 'none';
+  popupButton.style.borderRadius = '5px';
+  popupButton.style.cursor = 'pointer';
+  document.body.appendChild(popupButton);
+
+  popupButton.addEventListener('click', () => {
+    // Create modal wrapper
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    modal.innerHTML = `
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Contact Us</h2>
+        <form id="modal-contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    // Close modal
+    modal.querySelector('.close').onclick = () => modal.remove();
+
+    // Form submission handler (replace with your logic)
+    document.getElementById('modal-contact-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Your message has been sent!');
+      modal.remove();
+    });
+  });
+});
+
+const path = require('path');
+
+module.exports = {
+  entry: './src/index.js', // Your main JS file
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  mode: 'production',
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'], // These loaders bundle and minify CSS
+      },
+    ],
+  },
+};

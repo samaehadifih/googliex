@@ -1,0 +1,603 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background: #333;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+#banner {
+    background: url('banner-image.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 5em 2em;
+}
+
+button {
+    padding: 0.7em 1.5em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 2em;
+    background: #333;
+    color: white;
+}
+
+.service-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.banner-slider {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    height: 300px;
+}
+
+.slide {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.parallax {
+    background: url('image.jpg') no-repeat fixed center;
+    background-size: cover;
+    height: 500px;
+}
+
+.parallax {
+    background: url('image.jpg') no-repeat fixed center;
+    background-size: cover;
+    height: 500px;
+}
+
+/* Theme Colors */
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #F1F1F1;
+    --text-color: #333;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* Header */
+header {
+    background: var(--primary-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Buttons */
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Cards */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: white;
+    margin: 10px;
+}
+a:hover {
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+/* Theme variables */
+:root {
+  --primary-color: #007BFF;
+  --secondary-color: #f1f1f1;
+  --text-color: #333;
+  --hover-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Global Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding: 20px;
+  color: #fff;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li a {
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Banner Section */
+#banner {
+  background: url('banner-image.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 5em 2em;
+}
+
+/* Services Cards */
+#services {
+  padding: 4em 2em;
+  background-color: #fff;
+}
+
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+
+.card h3 {
+  margin: 0.5em 0;
+  color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2em;
+  background-color: var(--primary-color);
+  color: #fff;
+}
+/* Define Color Variables */
+:root {
+  --black: #000000;
+  --blue: #007BFF;      /* Bright blue accent */
+  --yellow: #FFC107;    /* Vibrant yellow accent */
+  --red: #DC3545;       /* Bold red accent */
+  --green: #28A745;     /* Refreshing green accent */
+  --background: var(--black);
+  --text: #ffffff;
+}
+
+/* Global Styles */
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--yellow);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--red);
+}
+
+/* Header Section */
+header {
+  background-color: var(--black);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo img {
+  height: 60px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li a {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Banner Section */
+#banner {
+  background: url('banner-image.jpg') no-repeat center center/cover;
+  text-align: center;
+  padding: 5em 2em;
+}
+
+#banner h1 {
+  font-size: 3em;
+  color: var(--blue);
+}
+
+#banner p {
+  font-size: 1.5em;
+  margin: 20px 0;
+}
+
+button {
+  background: linear-gradient(45deg, var(--blue), var(--green));
+  border: none;
+  color: var(--text);
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(45deg, var(--red), var(--yellow));
+}
+
+/* Services Section */
+#services {
+  background-color: #111;
+  padding: 4em 2em;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--yellow);
+  margin-bottom: 30px;
+}
+
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #222;
+  border: 1px solid var(--green);
+  border-radius: 10px;
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.card h3 {
+  color: var(--blue);
+  margin: 10px 0;
+}
+
+/* Footer Section */
+footer {
+  background-color: var(--black);
+  padding: 20px;
+  text-align: center;
+  color: var(--green);
+  font-size: 14px;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content form input,
+.modal-content form textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.modal-content form button {
+  background: var(--blue);
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+/* Theme Variables */
+:root {
+  --black: #000000;
+  --blue: #007BFF;      /* Bright blue accent */
+  --yellow: #FFC107;    /* Vibrant yellow accent */
+  --red: #DC3545;       /* Bold red accent */
+  --green: #28A745;     /* Refreshing green accent */
+  --background: #111111;
+  --text: #ffffff;
+}
+
+/* Global Styles */
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--yellow);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--red);
+}
+
+/* Header */
+header {
+  background-color: var(--black);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo img {
+  height: 60px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li a {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--yellow);
+}
+
+/* Banner Section */
+#banner {
+  background: url('banner-image.jpg') no-repeat center center/cover;
+  text-align: center;
+  padding: 5em 2em;
+}
+
+#banner h1 {
+  font-size: 3em;
+  color: var(--blue);
+}
+
+#banner p {
+  font-size: 1.5em;
+  margin: 20px 0;
+}
+
+button {
+  background: linear-gradient(45deg, var(--blue), var(--green));
+  border: none;
+  color: var(--text);
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(45deg, var(--red), var(--yellow));
+}
+
+/* Services Section */
+#services {
+  background-color: #222;
+  padding: 4em 2em;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--yellow);
+  margin-bottom: 30px;
+}
+
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #333;
+  border: 1px solid var(--green);
+  border-radius: 10px;
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.card h3 {
+  color: var(--blue);
+  margin: 10px 0;
+}
+
+/* Service Detail Content */
+#service-detail {
+  padding: 4em 2em;
+  background-color: #1a1a1a;
+}
+
+#service-detail h1 {
+  color: var(--blue);
+}
+
+#service-detail p {
+  font-size: 1.1em;
+  margin: 20px 0;
+}
+
+/* Footer */
+footer {
+  background-color: var(--black);
+  padding: 20px;
+  text-align: center;
+  color: var(--green);
+  font-size: 14px;
+}
+<style>
+  /* Inline CSS for critical rendering path */
+  body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; background: #111; color: #fff; }
+  /* Add other critical styles here */
+</style>
+<link rel="stylesheet" href="theme.css">
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto.woff2') format('woff2'),
+       url('Roboto.woff') format('woff');
+  font-display: swap;
+}
